@@ -17,8 +17,8 @@
 #include "lib.h"
 
 typedef struct {
-  int32_t x;
-  int32_t y;
+  int64_t x;
+  int64_t y;
 } point_struct;
 
 // typedef int32_t point_array[2];
