@@ -21,8 +21,6 @@ typedef struct {
   int64_t y;
 } point_struct;
 
-// typedef int32_t point_array[2];
-
 point_struct __attribute__((noinline)) bar(int32_t x, int32_t y) {
     point_struct p;
     p.x = x;
@@ -30,17 +28,9 @@ point_struct __attribute__((noinline)) bar(int32_t x, int32_t y) {
     return p;
 }
 
-// point_array __attribute__((noinline)) baz(int32_t x, int32_t y) {
-//     point_array p;
-//     p[0] = x;
-//     p[1] = y;
-//     return p;
-// }
-
 int __attribute__((noinline)) foo(int32_t y) {
     point_struct p = bar(y, y + 1);
-    // point_array q = baz(y, y + 1);
-    return p.x * p.y /* + q[0] * q[1] */ == 2;
+    return p.x * p.y == 2;
 }
 
 int main (int argc, char** argv) {
