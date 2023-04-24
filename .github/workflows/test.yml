@@ -1,13 +1,6 @@
 name: CI
 
-on:
-  pull_request:
-    branches: [ main ]
-  push:
-    branches:
-      - main
-    paths:
-      - '!README.md'
+on: [push, pull_request]
 
 
 jobs:
